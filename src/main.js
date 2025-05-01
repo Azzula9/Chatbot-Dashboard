@@ -18,6 +18,7 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 
 // LightBootstrap plugin
+import 'primeicons/primeicons.css';
 import LightBootstrap from "./light-bootstrap-main";
 
 // router setup

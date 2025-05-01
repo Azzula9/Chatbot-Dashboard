@@ -27,8 +27,8 @@ $default-color:              #888888 !default;
 $default-bg:                 #888888 !default;
 $default-states-color:       #777777 !default;
 
-$primary-color:              #3472F7 !default;
-$primary-bg:                 #3472F7 !default;
+$primary-color:              #FF9500 !default;
+$primary-bg:                 #FF9500 !default;
 $primary-states-color:       #1D62F0 !default;
 
 $success-color:              #87CB16 !default;
@@ -256,7 +256,7 @@ $bottombar-back:       bottombar-back !default;
 
 
 $white-navbar:              rgba(#FFFFFF, .96);
-$blue-navbar:               lighten($new-dark-blue, 10%);
+$blue-navbar:               #FF9500 !default;   
 $azure-navbar:              lighten($new-blue, 15%);
 $green-navbar:              lighten($new-green, 10%);
 $orange-navbar:             lighten($new-orange, 10%);
