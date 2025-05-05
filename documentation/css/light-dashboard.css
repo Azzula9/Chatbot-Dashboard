@@ -5115,7 +5115,7 @@ blockquote small {
   color: #429cb6;
 }
 
-.text-success, .text-success:hover {
+.text-success, .:hover {
   color: #54b07d;
 }
 

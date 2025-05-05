@@ -7,7 +7,7 @@
       <div class="logo">
         <a href="#" class="simple-text logo__container">
             <div class="logo-img">
-              <img src="img/beeorder.png" alt="Logo" style="width: 80px; height: 80;" />
+                <img src="img/beeorder.png" alt="">
             </div>
           {{title}}
         </a>

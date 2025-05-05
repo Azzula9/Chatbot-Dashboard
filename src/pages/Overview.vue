@@ -1,67 +1,70 @@
 <template>
   <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-warning">
-              <i class="nc-icon nc-chart text-warning"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Capacity</p>
-              <h4 class="card-title">105GB</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-refresh"></i>Updated now
-            </div>
-          </stats-card>
-        </div>
+    <div class="cohntainer-fluid">
+      <div class="mb-3 px-3">
+        <p class="h5 text-dark">
+          🐝 Back in the hive, Jane! Let’s make this chatbot bee-yond awesome
+        </p>
+      </div>
+      <card class="stats-wrapper-card">
+  <div class="d-flex justify-content-between align-items-center px-3 pt-3 pb-1">
+    <h4 class="card-title mb-0 " style="font-weight: bold;"> Statistics</h4>
+    <p class="card-category mb-0 text-muted small">
+      This report was generated on 15/04/2025 at 1:50:09 PM - 
+      <a href="#" class="text-success">Refresh</a>
+    </p>
+  </div>
 
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-success">
-              <i class="nc-icon nc-light-3 text-success"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Revenue</p>
-              <h4 class="card-title">$1,345</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-calendar-o"></i>Last day
-            </div>
-          </stats-card>
+  <div class="row p-3">
+    <div class="col-xl-3 col-md-6">
+      <stats-card>
+        <div slot="header" class="icon-warning">
+          <i class="pi pi-envelope text-warning"></i>
         </div>
-
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-danger">
-              <i class="nc-icon nc-vector text-danger"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Errors</p>
-              <h4 class="card-title">23</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-clock-o"></i>Last day
-            </div>
-          </stats-card>
+        <div slot="content" class="stats-card-padding">
+          <p class="card-category">Chat Sessions</p>
+          <h4 class="card-title">5,905</h4>
         </div>
+      </stats-card>
+    </div>
 
-        <div class="col-xl-3 col-md-6">
-          <stats-card>
-            <div slot="header" class="icon-info">
-              <i class="nc-icon nc-favourite-28 text-primary"></i>
-            </div>
-            <div slot="content">
-              <p class="card-category">Followers</p>
-              <h4 class="card-title">+45</h4>
-            </div>
-            <div slot="footer">
-              <i class="fa fa-refresh"></i>Updated now
-            </div>
-          </stats-card>
+    <div class="col-xl-3 col-md-6">
+      <stats-card>
+        <div slot="header" class="icon-success">
+          <i class="pi pi-paperclip text-success"></i>
         </div>
+        <div slot="content" class="stats-card-padding">
+          <p class="card-category">Bot Accuracy</p>
+          <h4 class="card-title">%95</h4>
+        </div>
+      </stats-card>
+    </div>
 
+    <div class="col-xl-3 col-md-6">
+      <stats-card>
+        <div slot="header" class="icon-danger">
+          <i class="pi pi-clock text-danger"></i>
+        </div>
+        <div slot="content" class="stats-card-padding">
+          <p class="card-category">Avg.Response Time</p>
+          <h4 class="card-title">2.4s</h4>
+        </div>
+      </stats-card>
+    </div>
+<!-- *start* -->
+    <div class="col-xl-3 col-md-6">
+      <stats-card>
+        <div slot="header" class="icon-info">
+          <i class="pi pi-chart-line text-primary"></i>
+        </div>
+        <div slot="content" class="stats-card-padding">
+          <p class="card-category">Escalation Rate</p>
+          <h4 class="card-title">%17</h4>
+        </div>
+      </stats-card>
+    </div>
+  </div>
+</card>
       </div>
       <div class="row">
         <div class="col-md-8">
@@ -87,26 +90,46 @@
         </div>
 
         <div class="col-md-4">
-          <chart-card :chart-data="pieChart.data" chart-type="Pie">
+          <chart-card :chart-data="pieChart.data" :chart-options="pieChart.options" chart-type="Pie">
             <template slot="header">
-              <h4 class="card-title">Email Statistics</h4>
-              <p class="card-category">Last Campaign Performance</p>
+              <h4 class="card-title">Most Common Chat Topics</h4>
+              <p class="card-category text-primary">See full report</p>
             </template>
             <template slot="footer">
-              <div class="legend">
-                <i class="fa fa-circle text-info"></i> Open
-                <i class="fa fa-circle text-danger"></i> Bounce
-                <i class="fa fa-circle text-warning"></i> Unsubscribe
-              </div>
-              <hr>
-              <div class="stats">
-                <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
-              </div>
+              <div class="legend" style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px;">
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #FF6B6B; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    Order Status
+  </div>
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #FFA94D; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    New Orders
+  </div>
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #FFD43B; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    Payment Issues
+  </div>
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #4DABF7; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    Missing/Wrong Items
+  </div>
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #69DB7C; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    Promos & Discounts
+  </div>
+  <div style="display: flex; align-items: center;">
+    <span style="width: 12px; height: 12px; background-color: #D0BFFF; border-radius: 50%; display: inline-block; margin-right: 6px;"></span>
+    Receipts & History
+  </div>
+</div>
+
+              <!-- <hr> -->
+            
             </template>
           </chart-card>
         </div>
       </div>
-
+<!-- end -->
       <div class="row">
         <div class="col-md-6">
           <chart-card
@@ -167,7 +190,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
   import ChartCard from 'src/components/Cards/ChartCard.vue'
@@ -184,11 +206,61 @@
       return {
         editTooltip: 'Edit Task',
         deleteTooltip: 'Remove',
+        // strat
         pieChart: {
-          data: {
-            labels: ['40%', '20%', '40%'],
-            series: [40, 20, 40]
+  data: {
+    labels: ['35%', '15%', '10%', '10%', '5%', '25%'],
+    series: [35, 15, 10, 10, 5, 25]
+  },
+  options: {
+    donut: true,
+    donutWidth: 50,
+    showLabel: false,
+    startAngle: 270,
+    chartPadding: 20,
+    stroke: {
+      lineCap: 'butt', // Creates square edges
+  }
+},
+
+plugins: [
+      {
+        beforeDraw: function(chart) {
+          if (chart.options.donut) {
+            // Add gaps between segments (3px)
+            const gapSize = 2;
+            const seriesTotal = chart.data.series.reduce((a, b) => a + b, 0);
+            
+            chart.svg.querySelectorAll('.ct-slice-donut').forEach((slice, i) => {
+              const pathLength = slice.getTotalLength();
+              const segmentRatio = chart.data.series[i] / seriesTotal;
+              const gapRatio = gapSize / (chart.options.donutWidth * Math.PI);
+              const visibleLength = pathLength * (1 - gapRatio / segmentRatio);
+              
+              slice.style.strokeDasharray = `${visibleLength} ${pathLength - visibleLength}`;
+              slice.style.strokeDashoffset = -pathLength;
+            });
           }
+        }
+      },
+      {
+        beforeDraw: function(chart) {
+          if (chart.options.plugins.ctCenterText) {
+            const centerText = chart.options.plugins.ctCenterText;
+            const width = chart.width;
+            const height = chart.height;
+            
+            chart.svg.elem('text', {
+              x: width / 4,
+              y: height / 4,
+              'text-anchor': 'middle',
+              'dominant-baseline': 'middle',
+              style: `font-size: ${centerText.size || '16px'}; font-weight: ${centerText.weight || 'bold'}`
+            }, 'ct-center-text', true).text(centerText.text || '');
+          }
+        }
+      }
+    ],
         },
         lineChart: {
           data: {
@@ -225,6 +297,7 @@
             }]
           ]
         },
+        // end
         barChart: {
           data: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

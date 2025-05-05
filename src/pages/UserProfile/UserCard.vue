@@ -10,10 +10,10 @@
         </h4>
       </a>
     </div>
-    <p class="description text-center"> "Lamborghini Mercy <br>
+    <!-- <p class="description text-center"> "Lamborghini Mercy <br>
       Your chick she so thirsty <br>
       I'm in that two seat Lambo"
-    </p>
+    </p> -->
     <div slot="footer" class="text-center d-flex justify-content-center">
       <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
       <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
